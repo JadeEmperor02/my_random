@@ -2,7 +2,9 @@
 name = "my_random"
 version = "0.1.0"
 edition = "2024"
-authors = ["Empyrean Jade joshuaije3@gmail.com"]
+authors = ["Empyrean Jade <joshuaije3@gmail.com>"]
 description = "A simple random number generator with some custom properties"
-license - "MIT"
+repository = "https://github.com/JadeEmperor02/my_random"
+keywords = ["random", "module"]
+license = "MIT"
 [dependencies]
