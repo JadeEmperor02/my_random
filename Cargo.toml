@@ -5,7 +5,7 @@ edition = "2024"
 authors = ["Empyrean Jade <joshuaije3@gmail.com>"]
 description = "A random generator thats allows you to create tokens, shuffle, numbers and lots more"
 repository = "https://github.com/JadeEmperor02/my_random"
-keywords = ["random", "module", "token", "shuffle", "non-duplicate","range"]
+keywords = ["random", "module", "token", "shuffle","range"]
 license = "MIT"
 readme = "README.md"
 [dependencies]
