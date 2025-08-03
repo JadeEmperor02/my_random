@@ -1,10 +1,11 @@
 [package]
 name = "my_random"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["Empyrean Jade <joshuaije3@gmail.com>"]
-description = "A simple random number generator with some custom properties"
+description = "A random generator thats allows you to create tokens, shuffle, numbers and lots more"
 repository = "https://github.com/JadeEmperor02/my_random"
-keywords = ["random", "module"]
+keywords = ["random", "module", "token", "shuffle", "non-duplicate","range"]
 license = "MIT"
+readme = "README.md"
 [dependencies]

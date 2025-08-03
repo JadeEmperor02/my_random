@@ -32,7 +32,7 @@ impl MyRandom {
         s1.wrapping_add(s0)
     }
 
-    pub fn rand(&mut self) -> f64 {
+    pub fn rand_float(&mut self) -> f64 {
         const MAX_U64_PLUS_ONE: f64 = (u64::MAX as f64) + 1.0;
         (self.next_u64() as f64) / MAX_U64_PLUS_ONE
     }
@@ -54,14 +54,26 @@ impl MyRandom {
         }
         new_vec
     }
-    pub fn shuffle_vector<T>(&mut self, val: &mut [T]) {
+    pub fn rand_shuffle<'a, T>(&mut self, val: &'a mut [T]) -> &'a mut [T] {
         for i in (1..val.len()).rev() {
             let j: usize = self.rand_range(0, (i + 1) as u64) as usize;
             val.swap(i, j);
         }
+        val
     }
     pub fn rand_bool(&mut self) -> bool {
         self.rand_range(0, 2) == 1
+    }
+    pub fn rand_token(&mut self, count: usize) -> String {
+        const CHARACTER_STRING: &[u8] = b"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        let mut token: String = String::with_capacity(count);
+        for _ in 0..count {
+            let rand_value: usize = self.rand_range(0, CHARACTER_STRING.len() as u64) as usize;
+            if let Some(&b) = CHARACTER_STRING.get(rand_value) {
+                token.push(b as char);
+            }
+        }
+        token
     }
 }
 
